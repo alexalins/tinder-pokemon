@@ -6,7 +6,6 @@ import ButtonChoice from './ButtonChoice';
 
 const CardPokemon = (props) => {
     const { image, onPress } = props;
-    console.log(onPress);
     return (
         <Card style={styles.card}>
             <Card.Cover source={{ uri: image }} style={styles.image} />

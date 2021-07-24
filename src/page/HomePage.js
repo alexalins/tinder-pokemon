@@ -5,29 +5,28 @@ import ImageApi from '../service/ImageApi';
 
 
 class HomePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        id: 1,
-        image: ImageApi(1)
-    };
-  }
-
-  like = () => {
-    let {id} = this.state;
-    if(id <= 150) {
-        this.setState({ id: ++id });
+    constructor(props) {
+        super(props);
+        this.state = {
+            id: 1,
+            image: ImageApi(1),
+        };
     }
-    this.setState({ image: ImageApi(this.state.id)});
-  }
 
-  render() {
-    return (
-      <View>
-        <CardPokemon image={ this.state.image } onPress={this.like}/>
-      </View>
-    );
-  }
+    like = () => {
+        let { id } = this.state;
+        if (id <= 150) {
+            this.setState({ id: ++id, image: ImageApi(++id)});
+        }
+    }
+
+    render() {
+        return (
+            <View>
+                <CardPokemon image={this.state.image} onPress={this.like} />
+            </View>
+        );
+    }
 }
 
 export default HomePage;
