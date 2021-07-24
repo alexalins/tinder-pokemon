@@ -4,16 +4,20 @@ import { Card } from 'react-native-paper';
 import ButtonChoice from './ButtonChoice';
 
 
-const CardPokemon = (props) => (
-    <Card style={styles.card}>
-        <Card.Cover source={{ uri: 'https://pokeres.bastionbot.org/images/pokemon/4.png' }} style={styles.image} />
-        <Card.Title title="Chamander" subtitle="Id: 4, tipo: Fogo" />
-        <Card.Actions style={styles.containerButtons}>
-            <ButtonChoice icon="close" style={styles.buttonClose} />
-            <ButtonChoice icon="check" style={styles.buttonCheck} />
-        </Card.Actions>
-    </Card>
-);
+const CardPokemon = (props) => {
+    const { image, onPress } = props;
+    console.log(onPress);
+    return (
+        <Card style={styles.card}>
+            <Card.Cover source={{ uri: image }} style={styles.image} />
+            <Card.Title title="Chamander" subtitle="Id: 4, tipo: Fogo" />
+            <Card.Actions style={styles.containerButtons}>
+                <ButtonChoice icon="close" style={styles.buttonClose} />
+                <ButtonChoice icon="heart" style={styles.buttonCheck} click={onPress}/>
+            </Card.Actions>
+        </Card>
+    );
+};
 
 export default CardPokemon;
 
