@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import CardPokemon from '../components/CardPokemon';
 
 class HomePage extends Component {
   constructor(props) {
@@ -10,19 +11,11 @@ class HomePage extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text> HomePage </Text>
+      <View>
+        <CardPokemon />
       </View>
     );
   }
 }
 
 export default HomePage;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center' 
-    }
-});
