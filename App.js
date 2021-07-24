@@ -1,21 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import HomePage from './src/page/HomePage';
+import UserPage from './src/page/UserPage';
 
-export default function App() {
+const Tab = createBottomTabNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator tabBarOptions ={{
+          activeTintColor: 'tomato',
+          inactiveTintColor: 'gray',
+        }}>
+        <Tab.Screen name='Home' component={HomePage} options={{
+          tabBarLabel:'Home',
+          tabBarIcon:({color, size}) => (
+            <Ionicons name="home" size={size} color={color} />
+          ),
+        }} />
+        <Tab.Screen name='User' component={UserPage} options={{
+          tabBarLabel:'User',
+          tabBarIcon:({color, size}) => (
+            <Ionicons name="person" size={size} color={color} />
+          ),
+        }}/>
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
