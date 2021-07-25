@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         marginTop: '20%',
         marginBottom: '15%',
         alignSelf: 'center',
-        borderRadius: 20
+        borderRadius: 20,
     },
     image: {
         height: 400,

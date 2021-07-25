@@ -22,7 +22,7 @@ class HomePage extends Component {
 
     render() {
         return (
-            <View>
+            <View style={styles.container}>
                 <CardPokemon image={this.state.image} onPress={this.like} />
             </View>
         );
@@ -30,3 +30,9 @@ class HomePage extends Component {
 }
 
 export default HomePage;
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: '#e6e6e6'
+    },
+});

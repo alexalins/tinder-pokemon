@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomePage from './src/page/HomePage';
 import UserPage from './src/page/UserPage';
+import PokedexPage from './src/page/PokedexPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,6 +21,12 @@ function App() {
             <Ionicons name="home" size={size} color={color} />
           ),
         }} />
+         <Tab.Screen name='Pokedex' component={PokedexPage} options={{
+          tabBarLabel:'Pokédex',
+          tabBarIcon:({color, size}) => (
+            <Ionicons name="logo-octocat" size={size} color={color} />
+          ),
+        }}/>
         <Tab.Screen name='User' component={UserPage} options={{
           tabBarLabel:'User',
           tabBarIcon:({color, size}) => (
