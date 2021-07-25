@@ -4,5 +4,5 @@ Utilizando [React Native](https://reactnative.dev/docs/getting-started) com [Exp
 
 #### Prints
 <p>
-  <img src="https://user-images.githubusercontent.com/17071599/126881602-c81d5713-e6e0-4cbc-9ac7-ac3354d773e1.png" width="250">
+  <img src="https://user-images.githubusercontent.com/17071599/126915117-03a38634-8fbc-4603-ab83-bfebbc595632.png" width="250">
 </p>
