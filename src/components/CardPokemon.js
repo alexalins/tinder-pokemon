@@ -1,16 +1,17 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Card } from 'react-native-paper';
+import PokemonUtils from '../util/PokemonUtil';
 import ButtonChoice from './ButtonChoice';
 
 
 const CardPokemon = (props) => {
     const { image, onPress, pokemon } = props;
-    const { id, name, types } = pokemon;
+    const { id, name } = pokemon;
     return (
         <Card style={styles.card}>
             <Card.Cover source={{ uri: image }} style={styles.image} />
-            <Card.Title title={name} subtitle={`Id: ${id}`} />
+            <Card.Title titleStyle={styles.firstLetter} title={name} subtitle={`Id: ${PokemonUtils.formatId(id)}`} />
             <Card.Actions style={styles.containerButtons}>
                 <ButtonChoice icon="close" style={styles.buttonClose} />
                 <ButtonChoice icon="heart" style={styles.buttonCheck} click={onPress}/>
@@ -44,5 +45,8 @@ const styles = StyleSheet.create({
     containerButtons: {
         marginTop: '5%',
         alignSelf: 'center',
+    },
+    firstLetter: {
+        textTransform: 'capitalize'
     }
 });

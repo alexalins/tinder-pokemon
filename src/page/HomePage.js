@@ -20,11 +20,9 @@ class HomePage extends Component {
         let { id } = this.state;
         ++id;
         if (id <= 150) {
-            console.log(id)
             this.setState({ id: id, image: ImageApi(id)});
         }
         this.getPokemon(id);
-        
     }
 
     componentDidMount() {
