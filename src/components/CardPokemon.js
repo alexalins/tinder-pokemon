@@ -6,15 +6,15 @@ import ButtonChoice from './ButtonChoice';
 
 
 const CardPokemon = (props) => {
-    const { image, onPress, pokemon } = props;
+    const { image, onPressLike, onPressClose, pokemon } = props;
     const { id, name } = pokemon;
     return (
         <Card style={styles.card}>
             <Card.Cover source={{ uri: image }} style={styles.image} />
             <Card.Title titleStyle={styles.firstLetter} title={name} subtitle={`Id: ${PokemonUtils.formatId(id)}`} />
             <Card.Actions style={styles.containerButtons}>
-                <ButtonChoice icon="close" style={styles.buttonClose} />
-                <ButtonChoice icon="heart" style={styles.buttonCheck} click={onPress}/>
+                <ButtonChoice icon="close" style={styles.buttonClose} click={onPressClose}/>
+                <ButtonChoice icon="heart" style={styles.buttonCheck} click={onPressLike}/>
             </Card.Actions>
         </Card>
     );
@@ -25,8 +25,8 @@ export default CardPokemon;
 
 const styles = StyleSheet.create({
     card: {
-        marginTop: 100,
-        marginBottom: 220,
+        marginTop: 150,
+        marginBottom: 180,
         alignSelf: 'center',
         borderRadius: 20,
     },
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         marginRight: 50
     },
     containerButtons: {
-        marginTop: '5%',
+        marginTop: '15%',
         alignSelf: 'center',
     },
     firstLetter: {
