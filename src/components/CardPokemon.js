@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
         marginBottom: 180,
         alignSelf: 'center',
         borderRadius: 20,
+        elevation: 5
     },
     image: {
         height: 400,
